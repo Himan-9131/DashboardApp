@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon/monitor_2782058.png" type="image/x-icon">
+    <title>Dashboard App - Using HTML, CSS and Javascript</title>
+    <!-- Material Icon Link -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Font Awesome Link -->
+    <script src="https://kit.fontawesome.com/6e38ffc0f6.js" crossorigin="anonymous"></script>
+    <!-- Linking CSS File -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Chart -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+    <div class="login-box" id="login-box">
+        <h3>Log in to Dashboard</h3>
+        <span>&#128071;</span>
+        <button id="login-btn">Log in</button>
+        <p>Don't hesitate, it's not need credentials. &#128512;</p>
+    </div>
+    <div class="container" id="main-container">
+        <div class="sidebar">
+            <div class="sidebar-head">
+                <h3>Dashboard</h3>
+                <span class="material-symbols-outlined">token</span>
+            </div>
+            <span class="material-symbols-outlined" id="menu-bar-icon">menu</span>
+            <span class="material-symbols-outlined" id="menu-close-icon">close</span>
+            <div class="menu" id="nav-menu">
+                <a href="#section1" class="menu-item active">Analytics<i class="fa-solid fa-chart-line"></i></a>
+                <a href="#section2" class="menu-item">Products<i class="fa-solid fa-wrench"></i></a>
+                <a href="#section3" class="menu-item">Customers<i class="fa-solid fa-users"></i></a>
+                <a href="#section4" class="menu-item">Profiles<i class="fa-regular fa-user"></i></a>
+                <a href="#section5" class="menu-item">Settings<i class="fa-solid fa-gear"></i></a>
+            </div>
+            <div class="admin-profile">
+                <div class="admin-profile-container">
+                    <img src="images/download (2).jpg" alt="Admin">
+                    <div class="admin-profile-head">
+                        <h4>Himansu P</h4>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <div class="admin-logout-container" id="admin-logout-container">
+                    <i class="fa-solid fa-power-off"></i>
+                    <span>Log out</span>
+                </div>
+                <i class="fa-solid fa-angle-down" id="angle-down"></i>
+            </div>
+        </div>
+        <div class="main-content">
+            <section class="analytics-page" id="section1">
+                <div class="first-divison">
+                    <h4>Hello User <span>&#128075;</span>,</h4>
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" placeholder="Search" name="Search">
+                    </div>
+                </div>
+                <div class="second-divison">
+                    <div class="box">
+                        <div class="circle">
+                            <i class="fa-solid fa-sack-dollar"></i>
+                        </div>
+                        <div class="box-content">
+                            <p class="text-muted">Earning</p>
+                            <h2 id="earningValue">$28k</h2>
+                            <p><span id="eVP">&uarr;13.8%</span> this <span class="timeRange">Week</span></p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="circle">
+                            <i class="fa-regular fa-file-lines"></i>
+                        </div>
+                        <div class="box-content">
+                            <p class="text-muted">Orders</p>
+                            <h2 id="ordersValue">$2.4k</h2>
+                            <p><span id="oVP">&darr;2%</span> this <span class="timeRange">Week</span></p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="circle">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <div class="box-content">
+                            <p class="text-muted">Balance</p>
+                            <h2 id="balanceValue">$24.4k</h2>
+                            <p><span id="bVP"></i>&darr;11%</span> this <span class="timeRange">Week</span></p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="circle">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+                        <div class="box-content">
+                            <p class="text-muted">Total Sales</p>
+                            <h2 id="totalSalesValue">$130k</h2>
+                            <p><span id="tSVP">&uarr;21%</span> this <span class="timeRange">Week</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="third-divison">
+                    <div class="analytics">
+                        <div class="first-division">
+                            <div class="heading">
+                                <h5>Overview</h5>
+                                <p class="text-muted"><span id="updateEarning">Weekly</span> Earning</p>
+                            </div>
+                            <select name="" id="analytics-filter">
+                                <option value="weekly">Weekly</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="quarterly">Quarterly</option>
+                                <option value="half Yearly">Half-yearly</option>
+                                <option value="yearly">Yearly</option>
+                            </select>
+                        </div>
+                        <div class="chart">
+                            <div>
+                                <div class="bar" id="january"></div>
+                                <h6>Jan</h6>
+                            </div>
+                            <div>
+                                <div class="bar" id="february"></div>
+                                <h6>Feb</h6>
+                            </div>
+                            <div>
+                                <div class="bar" id="march"></div>
+                                <h6>Mar</h6>
+                            </div>
+                            <div>
+                                <div class="bar" id="april"></div>
+                                <h6>Apr</h6>
+                            </div>
+                            <div>
+                                <div class="bar" id="may"></div>
+                                <h6>May</h6>
+                            </div>
+                            <div>
+                                <div class="bar" id="june"></div>
+                                <h6>Jun</h6>
+                            </div>
+                            <div>
+                                <div class="bar" id="july"></div>
+                                <h6>Jul</h6>
+                            </div>
+                            <div>
+                                <div class="bar" id="august"></div>
+                                <h6>Aug</h6>
+                            </div>
+                            <div>
+                                <div class="bar" id="september"></div>
+                                <h6>Sep</h6>
+                            </div>
+                            <div>
+                                <div class="bar" id="october"></div>
+                                <h6>Oct</h6>
+                            </div>
+                            <div>
+                                <div class="bar" id="november"></div>
+                                <h6>Nov</h6>
+                            </div>
+                            <div>
+                                <div class="bar" id="december"></div>
+                                <h6>Dec</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="customers">
+                        <h5>Customers</h5>
+                        <span class="increase">+ Increased</span>
+                        <p class="text-muted">Customers those buy products</p>
+                        <div class="outer-circle">
+                            <div class="inner-circle">
+                                <div class="circle-border green" id="circle-green"></div>
+                                <div class="circle-content">
+                                    <h3 id="increased-customer-percentage">13%</h3>
+                                    <p>Total new customers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="customers">
+                        <h5>Customers</h5>
+                        <span class="decrease">- Decreased</span>
+                        <p class="text-muted">Customers those leaved us</p>
+                        <div class="outer-circle">
+                            <div class="inner-circle">
+                                <div class="circle-border red" id="circle-red"></div>
+                                <div class="circle-content">
+                                    <h3 id="decreased-customer-percentage">9%</h3>
+                                    <p>Closed customers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fourth-divison">
+                    <div class="first-row">
+                        <h3>Product sell</h3>
+                        <div>
+                            <div class="search-bar">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="search" placeholder="Search" name="Search">
+                            </div>
+                            <select name="" id="product-filter">
+                                <option value="">Last 15 days</option>
+                                <option value="">Last 30 days</option>
+                                <option value="">Last 6 months</option>
+                                <option value="">Last 1 year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Stock</th>
+                                <th>Price</th>
+                                <th>Total Sales</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img src="images/abstract 3d.jpg" alt="">
+                                    <div class="table-data-content">
+                                        <h4>Abstract 3D</h4>
+                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+                                </td>
+                                <td>32 in stock</td>
+                                <td>$45.99</td>
+                                <td>18</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/sarphens illustration.jpg" alt="">
+                                    <div class="table-data-content">
+                                        <h4>Sarphens Illustration</h4>
+                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+                                </td>
+                                <td>15 in stock</td>
+                                <td>$78.43</td>
+                                <td>35</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/dark mattress.jpg" alt="">
+                                    <div class="table-data-content">
+                                        <h4>Dark Mattress</h4>
+                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+                                </td>
+                                <td>Out of stock</td>
+                                <td>$38.25</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/ignite 3d.jpg" alt="">
+                                    <div class="table-data-content">
+                                        <h4>Ignite 3D</h4>
+                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+                                </td>
+                                <td>20 in stock</td>
+                                <td>$50.25</td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/dark horizon.jpg" alt="">
+                                    <div class="table-data-content">
+                                        <h4>Dark Horizon</h4>
+                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+                                </td>
+                                <td>Out of stock</td>
+                                <td>$25.50</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/winter slave.jpg" alt="">
+                                    <div class="table-data-content">
+                                        <h4>Winter Slave 3D</h4>
+                                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    </div>
+                                </td>
+                                <td>45 in stock</td>
+                                <td>$78.80</td>
+                                <td>5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="admin-page" id="section2" style="display: none;">
+                <div class="first-divison">
+                    <div class="m-p-first-division">
+                        <h3>Manage Products</h3>
+                        <div class="search-products">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="search" name="Search" placeholder="Search Products">
+                        </div>
+                        <select name="" id="product-select">
+                            <option value="themes">Themes</option>
+                            <option value="templates">Templates</option>
+                            <option value="plugins">Plugins</option>
+                            <option value="softwares">Softwares</option>
+                        </select>
+                    </div>
+                    <div class="m-p-second-divison">
+                        <h4>Category <i class="fa-solid fa-arrow-right"></i> <span id="product-category">Themes</span>
+                        </h4>
+                        <div class="m-p-cards">
+                            <div class="m-p-card">
+                                <h3>Nature</h3>
+                                <img src="images/nature.jpg" alt="">
+                                <h5>Price : $42.01</h5>
+                                <p>Compatibility : <span>Desktop, Tablet, Mobile</span></p>
+                            </div>
+                            <div class="m-p-card">
+                                <h3>Space</h3>
+                                <img src="images/space.jpg" alt="">
+                                <h5>Price : $74.08</h5>
+                                <p>Compatibility : <span>Desktop, Tablet, Mobile</span></p>
+                            </div>
+                            <div class="m-p-card">
+                                <h3>Cartoons</h3>
+                                <img src="images/cartoons.jpg" alt="">
+                                <h5>Price : $82.05</h5>
+                                <p>Compatibility : <span>Desktop, Tablet, Mobile</span></p>
+                            </div>
+                            <div class="m-p-card">
+                                <h3>Winter Nights</h3>
+                                <img src="images/winternight.jpg" alt="">
+                                <h5>Price : $62.65</h5>
+                                <p>Compatibility : <span>Desktop, Tablet, Mobile</span></p>
+                            </div>
+                            <div class="m-p-card">
+                                <h3>Country Side</h3>
+                                <img src="images/countryside.jpg" alt="">
+                                <h5>Price : $47.50</h5>
+                                <p>Compatibility : <span>Desktop, Tablet, Mobile</span></p>
+                            </div>
+                            <div class="m-p-card">
+                                <h3>Illustrations</h3>
+                                <img src="images/illustrations.jpg" alt="">
+                                <h5>Price : $98.00</h5>
+                                <p>Compatibility : <span>Desktop, Tablet, Mobile</span></p>
+                            </div>
+                            <div class="m-p-card">
+                                <h3>Sports</h3>
+                                <img src="images/sports.jpg" alt="">
+                                <h5>Price : $23.00</h5>
+                                <p>Compatibility : <span>Desktop, Tablet, Mobile</span></p>
+                            </div>
+                            <div class="m-p-card">
+                                <h3>Technology</h3>
+                                <img src="images/technology.jpg" alt="">
+                                <h5>Price : $64.00</h5>
+                                <p>Compatibility : <span>Desktop, Tablet, Mobile</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="second-divison">
+                    <h2>Add/Remove Categories</h2>
+                    <div>
+                        <button id="add-category"><i class="fa-solid fa-plus"></i></button>
+                        <button id="remove-category"><i class="fa-solid fa-minus"></i></button>
+                    </div>
+                </div>
+            </section>
+            <section class="customer-page" id="section3" style="display: none;">
+                <div class="first-divison">
+                    <div class="customer-heading">
+                        <h1>Manage Customers</h1>
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <ul class="customerList" id="customers-list">
+
+                    </ul>
+                </div>
+                <div class="second-divison">
+                    <h2>Add Customer</h2>
+                    <button id="add-customer"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <div class="customer-engagement">
+                    <div class="first-divison">
+                        <h3>Customer Engagement</h3>
+                        <select name="" id="customerEngagement">
+                            <option value="lastFifteenDays">Last 15 days</option>
+                            <option value="lastThirtyDays">Last 30 days</option>
+                            <option value="lastSixMonths">Last 6 months</option>
+                            <option value="lastOneYear">Last 1 year</option>
+                            <option value="lastFiveYear">Last 5 year</option>
+                        </select>
+                    </div>
+                    <div class="second-divison">
+                        <div id="piechart">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="profiles-page" id="section4" style="display: none;">
+                <h1>Manage Profiles</h1>
+                <div class="profiles-container">
+                    <div class="profile-card">
+                        <div class="image-container">
+                            <img src="icons/icons8-admin-100.png" alt="Admin">
+                        </div>
+                        <button>Admin</button>
+                    </div>
+                    <div class="profile-card">
+                        <div class="image-container">
+                            <img src="icons/icons8-member-100.png" alt="Admin">
+                        </div>
+                        <button>Switch to Member</button>
+                    </div>
+                </div>
+            </section>
+            <section class="settings-page" id="section5" style="display: none;">
+                <h1>Settings</h1>
+                <div class="settings-options-container">
+                    <div class="setting-option">
+                        <div class="sett-opt-first">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <h4>Basic Info</h4>
+                        </div>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="setting-option">
+                        <div class="sett-opt-first">
+                            <i class="fa-solid fa-pen-nib"></i>
+                            <h4>Preferences</h4>
+                        </div>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="setting-option">
+                        <div class="sett-opt-first">
+                            <i class="fa-solid fa-user"></i>
+                            <h4>Profile Settings</h4>
+                        </div>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="setting-option">
+                        <div class="sett-opt-first">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <h4>Account Settings</h4>
+                        </div>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="setting-option">
+                        <div class="sett-opt-first">
+                            <i class="fa-solid fa-wrench"></i>
+                            <h4>Manage Workspace</h4>
+                        </div>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                    <div class="setting-option">
+                        <div class="sett-opt-first">
+                            <i class="fa-solid fa-lock"></i>
+                            <h4>Security Settings</h4>
+                        </div>
+                        <i class="fa-solid fa-angle-right"></i>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Modal for admin page / add category -->
+    <div class="category-modal" id="addCategoryModal">
+        <div class="category-modal-content">
+            <span class="category-modal-close" id="closeAddCategoryModal">&times;</span>
+            <h2>Add new category</h2>
+            <input type="text" id="newCategoryName" placeholder="Enter category name">
+            <button id="addNewCategory">Add category</button>
+        </div>
+    </div>
+    <!-- Modal for admin page / remove category -->
+    <div class="category-modal" id="removeCategoryModal">
+        <div class="category-modal-content">
+            <span class="category-modal-close" id="closeRemoveCategoryModal">&times;</span>
+            <h2>Select categories to remove</h2>
+            <div id="categories-list"></div>
+            <button id="remove-selected">Remove Selected</button>
+        </div>
+    </div>
+    <!-- Modal for customer page -->
+    <div class="customer-modal" id="customerModal">
+        <span class="close" id="closeModalButton">&times;</span>
+        <div class="modalContent">
+            <h3>Add Customer</h3>
+            <form id="addCustomerForm">
+                <div class="fields">
+                    <label for="customerName">Name:</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="fields">
+                    <label for="customerContact">Contact:</label>
+                    <input type="number" id="customerContact" required>
+                </div>
+                <div class="fields">
+                    <label for="customerAddress">Address:</label>
+                    <textarea type="text" id="customerAddress" required></textarea>
+                </div>
+                <button type="submit" id="addCustomer">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/data.js"></script>
+</body>
+
+</html>

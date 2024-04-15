@@ -1,0 +1,2016 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+:root {
+    --color-white: #ffffff;
+    --sidebar-background: #191940;
+    --container-border-radius: 0.2rem;
+    --card-border-radius: 0.6rem;
+    --text-muted: rgb(90, 88, 88);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.login-box {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+}
+
+.login-box h3 {
+    font-size: 3rem;
+    color: var(--sidebar-background);
+    margin-top: 6rem;
+}
+
+.login-box span {
+    font-size: 2.5rem;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(20px);
+    }
+
+    60% {
+        transform: translateY(10px);
+    }
+}
+
+.login-box button {
+    font-size: 2rem;
+    border: none;
+    border-radius: 0.1rem;
+    padding: 1rem 2rem;
+    background: var(--sidebar-background);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.login-box p {
+    color: var(--sidebar-background);
+}
+
+/* Main Container */
+.container {
+    display: none;
+    flex-direction: row;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 15%;
+    height: 100%;
+    position: fixed;
+    background: var(--sidebar-background);
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.sidebar-head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+    padding-bottom: 10rem;
+}
+
+.sidebar .menu .menu-item {
+    width: 100%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-white);
+    font-size: 0.9rem;
+}
+
+.sidebar .menu a:hover {
+    border: 0.063rem solid gray;
+    border-radius: var(--container-border-radius);
+    padding: 0.4rem 0.6rem;
+    transition: all 0.3s ease;
+}
+
+.sidebar .menu .menu-item.active {
+    padding: 0.4rem 0.6rem;
+    background: #2d2d69;
+    border: 0.063rem solid gray;
+    border-radius: var(--container-border-radius);
+}
+
+.admin-profile {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    background: #2d2d69;
+    border-radius: var(--container-border-radius);
+}
+
+.admin-profile .admin-profile-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.admin-profile .admin-logout-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-white);
+    margin-left: 1rem;
+    gap: 1rem;
+    padding: 0.4rem;
+    border-radius: var(--container-border-radius);
+    display: none;
+}
+
+.admin-profile .admin-logout-container span {
+    color: var(--color-white);
+}
+
+.admin-profile i {
+    color: var(--color-white);
+    font-size: 1.5rem;
+}
+
+.admin-profile .admin-profile-container img {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+}
+
+.admin-profile .admin-profile-head h4 {
+    font-size: 0.8rem;
+    color: var(--color-white);
+}
+
+.admin-profile .admin-profile-head span {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+}
+
+#menu-bar-icon {
+    display: none;
+}
+
+#menu-close-icon {
+    display: none;
+}
+
+/* Main Content */
+.main-content {
+    width: 85%;
+    height: 100%;
+    overflow-y: auto;
+    margin-left: 15%;
+    background: #ededee;
+    padding: 1rem;
+}
+
+/**************************************************** Analytics Page Start ****************************************/
+.main-content .analytics-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.main-content .analytics-page .first-divison {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-content .analytics-page .first-divison h4 {
+    font-size: 0.8rem;
+    color: #121212;
+}
+
+.main-content .analytics-page .first-divison .search-bar {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border: none;
+    background: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+    color: #d8dade;
+}
+
+.main-content .analytics-page .first-divison .search-bar input[type="search"] {
+    border: none;
+    outline: none;
+}
+
+.main-content .analytics-page .first-divison .search-bar input[type="search"]::placeholder {
+    color: #d8dade;
+}
+
+.main-content .analytics-page .second-divison {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-content .analytics-page .second-divison .box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: var(--card-border-radius);
+}
+
+.main-content .analytics-page .second-divison .box .circle {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.main-content .analytics-page .second-divison .box:nth-child(1) .circle {
+    background: #deffee;
+    color: #01ab4f;
+}
+
+.main-content .analytics-page .second-divison .box:nth-child(2) .circle {
+    background: #e7dbff;
+    color: #a101ff;
+}
+
+.main-content .analytics-page .second-divison .box:nth-child(3) .circle {
+    background: #ccf2ff;
+    color: #1361c3;
+}
+
+.main-content .analytics-page .second-divison .box:nth-child(4) .circle {
+    background: #ffb4db;
+    color: #d90113;
+}
+
+.main-content .analytics-page .second-divison .box .box-content {
+    width: 8rem;
+    border-left: 3px dotted grey;
+    text-align: center;
+}
+
+.main-content .analytics-page .second-divison .box .box-content p {
+    font-size: .6rem;
+}
+
+.text-muted {
+    color: #aba9a9;
+}
+
+.main-content .analytics-page .second-divison .box .box-content h2 {
+    font-size: 1.4rem;
+}
+
+.main-content .analytics-page .second-divison .box .box-content p span {
+    font-weight: bolder;
+}
+
+#eVP {
+    color: green;
+}
+
+#oVP {
+    color: red;
+}
+
+#bVP {
+    color: red;
+}
+
+#tSVP {
+    color: green;
+}
+
+.third-divison {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.third-divison .analytics {
+    background: #fff;
+    padding: 1rem 2rem;
+    border-radius: var(--card-border-radius);
+}
+
+.third-divison .analytics .first-division {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.third-divison .analytics .first-division .heading h5 {
+    font-weight: bold;
+}
+
+.third-divison .analytics .first-division .heading p {
+    font-size: .6rem;
+}
+
+.third-divison .analytics .first-division select {
+    outline: none;
+    border: none;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    background: rgb(241, 241, 241);
+    cursor: pointer;
+}
+
+.third-divison .analytics .chart {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.third-divison .analytics .chart>div {
+    text-align: center;
+}
+
+.third-divison .analytics .chart>div h6 {
+    margin-top: .6rem;
+}
+
+.bar {
+    width: 2.5rem;
+    border-radius: var(--card-border-radius);
+    background: #f2efff;
+}
+
+.third-divison .analytics .chart>div:nth-child(1) .bar {
+    height: 6.5rem;
+}
+
+.third-divison .analytics .chart>div:nth-child(2) .bar {
+    height: 5rem;
+    background: #5a32ea;
+}
+
+.third-divison .analytics .chart>div:nth-child(3) .bar {
+    height: 10rem;
+    background: #27b462;
+}
+
+.third-divison .analytics .chart>div:nth-child(4) .bar {
+    height: 7.5rem;
+}
+
+.third-divison .analytics .chart>div:nth-child(5) .bar {
+    height: 8.5rem;
+}
+
+.third-divison .analytics .chart>div:nth-child(6) .bar {
+    height: 4rem;
+    background: #ce0446;
+}
+
+.third-divison .analytics .chart>div:nth-child(7) .bar {
+    height: 9rem;
+}
+
+.third-divison .analytics .chart>div:nth-child(8) .bar {
+    height: 10rem;
+}
+
+.third-divison .analytics .chart>div:nth-child(9) .bar {
+    height: 9.5rem;
+}
+
+.third-divison .analytics .chart>div:nth-child(10) .bar {
+    height: 8rem;
+    background: #5a32ea;
+}
+
+.third-divison .analytics .chart>div:nth-child(11) .bar {
+    height: 7.5rem;
+}
+
+.third-divison .analytics .chart>div:nth-child(12) .bar {
+    height: 9.5rem;
+    background: #27b462;
+}
+
+.third-divison .customers {
+    padding: 1.2rem 2.5rem;
+    background: #ffffff;
+    border-radius: var(--card-border-radius);
+}
+
+.third-divison .customers p {
+    font-size: .6rem;
+}
+
+.third-divison .customers span {
+    font-size: .7rem;
+    font-weight: bold;
+}
+
+.increase {
+    color: #27b462;
+}
+
+.decrease {
+    color: #ce0446;
+}
+
+.third-divison .customers .outer-circle {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 1rem solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.third-divison .customers .outer-circle .inner-circle {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background: #ffffff;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    position: relative;
+}
+
+.customers .outer-circle .inner-circle .circle-border {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.customers .outer-circle .inner-circle .circle-border.green {
+    border: 0.2rem dotted #01ab4f;
+    animation: rotateBorderClockWise 30s linear infinite;
+}
+
+@keyframes rotateBorderClockWise {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.third-divison .customers .outer-circle .circle-border.red {
+    border: 0.1rem dashed #ce0446;
+    animation: rotateBorderAntiClockWise 30s linear infinite;
+}
+
+@keyframes rotateBorderAntiClockWise {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.third-divison .customers .outer-circle .inner-circle .circle-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.main-content .analytics-page .fourth-divison {
+    background: #ffffff;
+    border-radius: var(--card-border-radius);
+    padding: 1rem;
+}
+
+.main-content .analytics-page .fourth-divison .first-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-content .analytics-page .fourth-divison .first-row h3 {
+    font-size: .8rem;
+}
+
+.main-content .analytics-page .fourth-divison .first-row>div {
+    display: flex;
+    gap: 2rem;
+}
+
+.main-content .analytics-page .fourth-divison .first-row>div .search-bar {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    border: none;
+    background: #e7e7e9;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.2rem;
+    font-size: 1rem;
+}
+
+.main-content .analytics-page .fourth-divison .first-row>div .search-bar i {
+    color: #969698;
+}
+
+.main-content .analytics-page .fourth-divison .first-row>div .search-bar input[type="search"] {
+    border: none;
+    outline: none;
+    background: #e7e7e9;
+}
+
+.main-content .analytics-page .fourth-divison .first-row>div select {
+    background: #e7e7e9;
+    padding: .5rem;
+    border: none;
+    outline: none;
+    border-radius: .2rem;
+    cursor: pointer;
+}
+
+.main-content .analytics-page .fourth-divison table {
+    width: 100%;
+    margin-top: 4rem;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.main-content .analytics-page .fourth-divison table thead tr th {
+    font-size: 0.8rem;
+    color: #969699;
+}
+
+.main-content .analytics-page .fourth-divison table thead tr th:nth-child(1) {
+    text-align: left;
+}
+
+.main-content .analytics-page .fourth-divison table thead {
+    border-bottom: 1px solid rgb(194, 192, 192);
+}
+/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< To be continue >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+.main-content .analytics-page .fourth-divison table tbody tr td {
+    padding-top: 2rem;
+}
+
+.main-content .analytics-page .fourth-divison table tbody tr td:nth-child(1) {
+    display: flex;
+    gap: 1rem;
+}
+
+.main-content .analytics-page .fourth-divison table tbody tr td:nth-child(1) img {
+    border-radius: 0.18rem;
+}
+
+.main-content .analytics-page .fourth-divison table tbody tr td:nth-child(1) .table-data-content {
+    text-align: left;
+}
+
+.main-content .analytics-page .fourth-divison table tbody tr td:nth-child(1) .table-data-content p {
+    font-size: 0.6rem;
+}
+
+.main-content .analytics-page .fourth-divison table tbody tr td:nth-child(2),
+.main-content .analytics-page .fourth-divison table tbody tr td:nth-child(3),
+.main-content .analytics-page .fourth-divison table tbody tr td:nth-child(4) {
+    font-size: .8rem;
+}
+
+/* --------------------------------------------------- Analytics Page End --------------------------------------------*/
+
+/**************************************************** Admin Panel Page Start ****************************************/
+.container .main-content .admin-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container .main-content .admin-page .first-divison {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: 1rem;
+}
+
+.container .main-content .admin-page .first-divison .m-p-first-division {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .main-content .admin-page .first-divison .m-p-first-division h3 {
+    font-size: 1rem;
+    color: #535354;
+}
+
+.container .main-content .admin-page .first-divison .m-p-first-division .search-products {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1rem;
+    background: #f3f3f5;
+    color: #535354;
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+}
+
+.container .main-content .admin-page .first-divison .m-p-first-division .search-products input[type='search'] {
+    border: none;
+    outline: none;
+    background: #f3f3f5;
+}
+
+.container .main-content .admin-page .first-divison .m-p-first-division select {
+    border: none;
+    outline: none;
+    background: #f3f3f5;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.container .main-content .admin-page .first-divison .m-p-second-divison {
+    margin-top: 3rem;
+}
+
+.container .main-content .admin-page .first-divison .m-p-second-divison h4 {
+    font-size: .8rem;
+    color: #535354;
+}
+
+.container .main-content .admin-page .first-divison .m-p-second-divison h4 i {
+    margin-left: 0.5rem;
+}
+
+.container .main-content .admin-page .first-divison .m-p-second-divison h4 span {
+    margin-left: 0.5rem;
+}
+
+.container .main-content .admin-page .first-divison .m-p-second-divison .m-p-cards {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.container .main-content .admin-page .first-divison .m-p-second-divison .m-p-cards .m-p-card {
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1px 1px rgb(220, 218, 218);
+    cursor: pointer;
+}
+
+.container .main-content .admin-page .first-divison .m-p-second-divison .m-p-cards .m-p-card h3 {
+    color: var(--sidebar-background);
+}
+
+.container .main-content .admin-page .first-divison .m-p-second-divison .m-p-cards .m-p-card img {
+    width: 16rem;
+    height: 10rem;
+    margin-top: 1rem;
+    border-radius: 0.2rem;
+}
+
+.container .main-content .admin-page .first-divison .m-p-second-divison .m-p-cards .m-p-card h5 {
+    margin-top: 0.5rem;
+}
+
+.container .main-content .admin-page .first-divison .m-p-second-divison .m-p-cards .m-p-card p {
+    margin-top: 0.5rem;
+    font-size: .7rem;
+}
+
+.container .main-content .admin-page .second-divison {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+}
+
+.container .main-content .admin-page .second-divison h2 {
+    color: #535354;
+}
+
+.container .main-content .admin-page .second-divison div {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.container .main-content .admin-page .second-divison div button {
+    border: none;
+    padding: 0.4rem 2rem;
+    border-radius: 0.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-white);
+}
+
+.container .main-content .admin-page .second-divison div button:nth-child(1) {
+    background: green;
+}
+
+.container .main-content .admin-page .second-divison div button:nth-child(2) {
+    background: red;
+}
+
+/* --------------------------------------------------- Admin Panel Page End --------------------------------------------*/
+
+/**************************************************** Customers Page Start ****************************************/
+.container .main-content .customer-page {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container .main-content .customer-page .first-divison {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: 1rem;
+}
+
+.container .main-content .customer-page .first-divison .customer-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    color: #535354;
+}
+
+.container .main-content .customer-page .first-divison .customer-heading h1 {
+    font-size: 1.5rem;
+}
+
+.container .main-content .customer-page .first-divison .customer-heading i {
+    font-size: 2rem;
+}
+
+.customerList {
+    margin-top: 5rem;
+    padding: 0 2rem;
+}
+
+.customerDesign {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.5px solid grey;
+}
+
+.customerData {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+}
+
+.customerData h5 {
+    font-size: 0.9rem;
+    color: #535354;
+}
+
+.customerData span {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+}
+
+.btn-danger {
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background: red;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.container .main-content .customer-page .second-divison {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-white);
+    padding: 2rem 3rem;
+    border-radius: var(--card-border-radius);
+}
+
+.container .main-content .customer-page .second-divison h2 {
+    color: #535354;
+}
+
+.container .main-content .customer-page .second-divison button {
+    padding: 0.4rem 2rem;
+    border-radius: 0.2rem;
+    font-size: 1.5rem;
+    border: 1px solid #535354;
+    background: var(--color-white);
+    color: #535354;
+    cursor: pointer;
+}
+
+.container .main-content .customer-page .customer-engagement {
+    background: var(--color-white);
+    padding: 1rem 2rem;
+    border-radius: var(--card-border-radius);
+}
+
+.container .main-content .customer-page .customer-engagement .first-divison {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .main-content .customer-page .customer-engagement .first-divison h3 {
+    font-size: 1rem;
+    color: #535354;
+}
+
+.container .main-content .customer-page .customer-engagement .first-divison select {
+    border: none;
+    outline: none;
+    background: #ededee;
+    color: #535354;
+    border-radius: 0.2rem;
+    padding: 0.2rem 0.4rem;
+    cursor: pointer;
+}
+
+.container .main-content .customer-page .customer-engagement {
+    padding: 1rem 2rem;
+}
+
+.container .main-content .customer-page .customer-engagement .second-divison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --------------------------------------------------- Customers Page End --------------------------------------------*/
+
+/**************************************************** Profiles Page Start ****************************************/
+.container .main-content .profiles-page {
+    min-height: 100vh;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: 2rem;
+    flex-direction: column;
+}
+
+.container .main-content .profiles-page h1 {
+    font-size: 2rem;
+    color: var(--text-muted);
+}
+
+.container .main-content .profiles-page .profiles-container {
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.container .main-content .profiles-page .profiles-container .profile-card {
+    width: 20rem;
+    height: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: var(--card-border-radius);
+}
+
+.container .main-content .profiles-page .profiles-container .profile-card .image-container {
+    border-bottom: 1px dotted var(--text-muted);
+}
+
+.container .main-content .profiles-page .profiles-container .profile-card img {
+    width: 10rem;
+    height: 10rem;
+}
+
+.container .main-content .profiles-page .profiles-container .profile-card button {
+    border: none;
+    background: var(--sidebar-background);
+    color: var(--color-white);
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: var(--container-border-radius);
+    font-size: 1rem;
+}
+
+
+
+/* --------------------------------------------------- Profiles Page End --------------------------------------------*/
+
+/**************************************************** Settings Page Start ****************************************/
+.container .main-content .settings-page {
+    min-height: 100vh;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: 2rem;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.container .main-content .settings-page h1 {
+    color: var(--text-muted);
+}
+
+.container .main-content .settings-page .settings-options-container {
+    padding: 0 5rem;
+}
+
+.container .main-content .settings-page .settings-options-container .setting-option {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text-muted);
+}
+
+.container .main-content .settings-page .settings-options-container .setting-option:hover {
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    border-radius: var(--container-border-radius);
+    cursor: pointer;
+}
+
+.container .main-content .settings-page .settings-options-container .setting-option .sett-opt-first {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* --------------------------------------------------- Settings Page End --------------------------------------------*/
+
+/* Admin page modal / remove category */
+
+.category-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.category-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 2rem;
+    border: 1px solid #888;
+    border-radius: 0.2rem;
+    width: 80%;
+}
+
+.category-modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.category-modal-close:hover,
+.category-modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#newCategoryName {
+    margin-top: 2rem;
+    width: 16rem;
+    height: 2rem;
+    padding: 0 0.5rem;
+    border: 1px solid grey;
+    border-radius: 0.2rem;
+    outline: none;
+}
+
+#addNewCategory {
+    height: 2rem;
+    margin-left: 1rem;
+    padding: 0 0.5rem;
+    border: 0.5px solid grey;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+#categories-list {
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+#remove-selected {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    border: 0.5px solid grey;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+/* Add Customer Modal */
+.customer-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.customer-modal span {
+    font-size: 5rem;
+    color: var(--color-white);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 4rem;
+}
+
+.customer-modal .modalContent {
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    padding: 1rem;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    text-align: center;
+}
+
+.customer-modal .modalContent form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.customer-modal .modalContent form .fields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.customer-modal .modalContent form .fields input {
+    width: 20rem;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    background: #f3f3f5;
+    color: #39393a;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.customer-modal .modalContent form .fields textarea {
+    width: 20rem;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+    background: #f3f3f5;
+    color: #535354;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.customer-modal .modalContent form button {
+    font-size: 1rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    background: #cbcbcd;
+    color: #535354;
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 1200px) {
+
+    /* Sidebar */
+    .sidebar {
+        padding: .2rem;
+    }
+
+    .sidebar-head {
+        justify-content: center;
+        gap: .5rem;
+        padding: 0;
+    }
+
+    .sidebar .menu {
+        padding: .5rem;
+    }
+
+    .admin-profile {
+        height: auto;
+        padding: 0.5rem;
+    }
+
+    .admin-profile .admin-logout-container {
+        margin-left: .5rem;
+        gap: .5rem;
+        padding: 0.4rem;
+    }
+
+    .admin-profile i {
+        font-size: 1rem;
+    }
+
+    .admin-profile .admin-profile-container img {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    .admin-profile .admin-profile-head h4 {
+        font-size: 0.6rem;
+    }
+
+    #menu-bar-icon {
+        display: none;
+    }
+
+    /* Main Content */
+    .main-content {
+        padding: .5rem;
+    }
+
+    /* Analytics */
+    /* :Second Divison: */
+    .main-content .analytics-page .second-divison {
+        flex-wrap: wrap;
+    }
+
+    .main-content .analytics-page .second-divison .box {
+        gap: .5rem;
+        padding: .5rem;
+    }
+
+    .main-content .analytics-page .second-divison .box .circle {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.2rem;
+    }
+
+    .main-content .analytics-page .second-divison .box .box-content p {
+        font-size: .5rem;
+    }
+
+    .main-content .analytics-page .second-divison .box .box-content h2 {
+        font-size: 1.2rem;
+    }
+
+    /* :Third Divison: */
+    .third-divison {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    /* Login page */
+    .login-box {
+        gap: 3rem;
+    }
+    
+    .login-box h3 {
+        font-size: 2rem;
+        margin-top: 4rem;
+    }
+    
+    .login-box span {
+        font-size: 2rem;
+    }
+    
+    .login-box button {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    
+    /* Sidebar */
+    .sidebar-head {
+        font-size: .8rem;
+        padding: .5rem;
+        gap: .3rem;
+    }
+
+    .sidebar .menu {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .sidebar .menu .menu-item {
+        font-size: 0.7rem;
+    }
+
+    .sidebar .menu a:hover {
+        padding: 0.2rem 0.1rem;
+    }
+
+    .sidebar .menu .menu-item.active {
+        padding: 0.2rem 0.1rem;
+    }
+
+    .admin-profile {
+        height: auto;
+        padding: 0.2rem;
+    }
+
+    .admin-profile .admin-profile-container {
+        gap: 0.2rem;
+    }
+
+    .admin-profile .admin-logout-container {
+        margin-left: 0.2rem;
+        gap: .5rem;
+        padding: 0.2rem;
+        font-size: .9rem;
+    }
+
+    .admin-profile i {
+        font-size: .8rem;
+    }
+
+    .admin-profile .admin-profile-container img {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .admin-profile .admin-profile-head h4 {
+        font-size: 0.5rem;
+    }
+
+    .admin-profile .admin-profile-head span {
+        font-size: 0.4rem;
+    }
+
+    #menu-bar-icon {
+        display: none;
+    }
+
+    /* Main content */
+    /* Analytics */
+    /* :First divison: */
+    .main-content .analytics-page .first-divison .search-bar {
+        padding: 0.5rem;
+    }
+
+    /* :Second Divison: */
+    .main-content .analytics-page .second-divison .box {
+        gap: .2rem;
+        padding: .5rem;
+    }
+
+    .main-content .analytics-page .second-divison .box .circle {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .main-content .analytics-page .second-divison .box .box-content {
+        width: 6rem;
+    }
+
+    .main-content .analytics-page .second-divison .box .box-content p {
+        font-size: .4rem;
+    }
+
+    .main-content .analytics-page .second-divison .box .box-content h2 {
+        font-size: 1rem;
+    }
+
+    /* :Third divison: */
+    .third-divison .analytics {
+        padding: .5rem;
+    }
+
+    .third-divison .analytics .chart {
+        gap: .5rem;
+    }
+
+    /* Customer modal */
+    
+    .customer-modal span {
+        font-size: 3rem;
+        top: 10%;
+        right: 20%;
+    }
+    
+    .customer-modal .modalContent {
+        position: absolute;
+        top: 20%;
+        left: 30%;
+        padding: .5rem;
+    }
+    
+    .customer-modal .modalContent form {
+        margin-top: 2rem;
+        padding: .5rem;
+    }
+    
+    .customer-modal .modalContent form .fields input {
+        width: 20rem;
+        font-size: 0.7rem;
+        padding: 0.5rem;
+    }
+    
+    .customer-modal .modalContent form .fields textarea {
+        width: 20rem;
+        font-size: 0.7rem;
+        padding: 0.5rem;
+    }
+    
+    .customer-modal .modalContent form button {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 100%;
+        position: relative;
+        flex-direction: row;
+        padding: 1rem;
+    }
+
+    .sidebar-head {
+        justify-content: flex-start;
+        padding: 0;
+    }
+
+    .sidebar .menu {
+        display: none;
+        width: 30%;
+        height: 100vh;
+        padding: .5rem;
+        padding-bottom: 0;
+        position: absolute; 
+        top: 0; 
+        left: -30%; 
+        background: var(--sidebar-background);
+    }
+
+    .sidebar .menu.extracted {
+        top: 100%; 
+        left: 0;
+        display: block;
+        z-index: 1;
+    }
+
+    .sidebar .menu .menu-item {
+        width: auto;
+        display: block;
+        font-size: 0.8rem;
+        padding: .5rem;
+    }
+
+    .sidebar .menu a:hover {
+        border: none;
+        padding: none;
+    }
+
+    .sidebar .menu .menu-item.active {
+        padding: .5rem;
+        background: var(--color-white);
+        color: var(--sidebar-background);
+        border: none;
+    }
+
+    .sidebar .menu i {
+        display: none;
+    }
+
+    .admin-profile {
+        display: none;
+    }
+    
+    #menu-bar-icon {
+        display: block;
+    }
+
+    /* Main content */
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+    }
+    /* Analytics */
+    /* :First divison: */
+    .main-content .analytics-page .first-divison .search-bar {
+        padding: 0.3rem;
+    }
+
+    /* :Second Divison: */
+    .main-content .analytics-page .second-divison {
+        justify-content: center;
+        gap: 1rem;
+    }
+    /* :Third Divison: */
+    .third-divison {
+       gap: 2rem;
+    }
+    
+    .third-divison .analytics .chart {
+        gap: .4rem;
+    }
+
+    .bar {
+        width: 2rem;
+    }
+    
+    .third-divison .customers {
+        padding: 1rem;
+    }
+    
+    .main-content .analytics-page .fourth-divison .first-row>div .search-bar {
+        gap: .5rem;
+        padding: 0.2rem;
+        font-size: .8rem;
+    }
+
+    .main-content .analytics-page .fourth-divison table tbody tr td:nth-child(1) .table-data-content h4{
+        font-size: .8rem;
+    }
+    
+    .main-content .analytics-page .fourth-divison table tbody tr td:nth-child(1) .table-data-content p {
+        font-size: .5rem;
+    }
+
+    /* Admin */
+    .container .main-content .admin-page .first-divison .m-p-first-division h3 {
+        font-size: .8rem;
+    }
+    
+    .container .main-content .admin-page .first-divison .m-p-first-division .search-products {
+        gap: .5rem;
+        font-size: .5rem;
+        padding: 0.3rem;
+    }
+
+    .container .main-content .admin-page .first-divison .m-p-first-division select {
+        padding: 0.3rem;
+    }
+
+    .container .main-content .admin-page .second-divison h2 {
+        font-size: 1rem;
+    }
+    
+    .container .main-content .admin-page .second-divison div button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    /* Customer */
+    .container .main-content .customer-page .first-divison {
+        padding: .5rem;
+    }
+
+    .container .main-content .customer-page .first-divison .customer-heading {
+        padding: 0;
+    }
+
+    .container .main-content .customer-page .first-divison .customer-heading h1 {
+        font-size: 1.2rem;
+    }
+    
+    .container .main-content .customer-page .first-divison .customer-heading i {
+        font-size: 1.4rem;
+    }
+
+    .container .main-content .customer-page .second-divison {
+        padding: .5rem;
+    }
+    
+    .container .main-content .customer-page .second-divison h2 {
+        font-size: 1.2rem;
+    }
+    
+    .container .main-content .customer-page .second-divison button {
+        padding: 0.5rem 1rem;
+        font-size: .8rem;
+    }
+
+    .container .main-content .customer-page .customer-engagement {
+        padding: 1rem;
+    }
+
+    .container .main-content .customer-page .customer-engagement {
+        padding: .5rem;
+    }
+    
+    .container .main-content .customer-page .customer-engagement .first-divison {
+        padding: 0.5rem 0;
+    }
+    
+    .container .main-content .customer-page .customer-engagement .first-divison h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Profile */
+    .container .main-content .profiles-page {
+        padding: 1rem;
+    }
+    
+    .container .main-content .profiles-page h1 {
+        font-size: 1rem;
+    }
+    
+    .container .main-content .profiles-page .profiles-container .profile-card {
+        width: 14rem;
+    }
+    
+    .container .main-content .profiles-page .profiles-container .profile-card img {
+        width: 6rem;
+        height: 6rem;
+    }
+    
+    .container .main-content .profiles-page .profiles-container .profile-card button {
+        padding: .5rem;
+        font-size: .8rem;
+    }
+    
+    .container .main-content .settings-page {
+        padding: 1rem;
+    }
+    
+    .container .main-content .settings-page h1 {
+        font-size: 1.2rem;
+    }
+    
+    .container .main-content .settings-page .settings-options-container {
+        padding: 0 3rem;
+    }
+    
+    .category-modal-content {
+        padding: .5rem;
+    }
+
+    .category-modal-content h2 {
+        font-size: 1rem;
+    }
+    
+    .category-modal-close {
+        font-size: 1.5rem;
+    }
+
+    #newCategoryName {
+        margin-top: 1.5rem;
+        width: 15rem;
+        height: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    #addNewCategory {
+        margin-top: .5rem;
+        height: 1.5rem;
+        margin-left: 0;
+    }
+    
+    /* Customer Modal */
+    .customer-modal span {
+        font-size: 3rem;
+        position: absolute;
+        top: 10%;
+        right: 18%;
+    }
+    
+    .customer-modal .modalContent {
+        position: absolute;
+        top: 20%;
+        left: 25%;
+        padding: .5rem;
+    }
+    
+    .customer-modal .modalContent form {
+        margin-top: 2rem;
+        padding: .5rem;
+    }
+    
+    .customer-modal .modalContent form .fields input {
+        width: 15rem;
+        font-size: 0.7rem;
+        padding: 0.5rem;
+    }
+    
+    .customer-modal .modalContent form .fields textarea {
+        width: 15rem;
+        font-size: 0.7rem;
+        padding: 0.5rem;
+    }
+    
+    .customer-modal .modalContent form button {
+        font-size: .9rem;
+        padding: 0.5rem;
+        background: #ededef;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    /* Login page */
+    .login-box {
+        gap: 2rem;
+    }
+    
+    .login-box h3 {
+        font-size: 1.5rem;
+        margin-top: 4rem;
+    }
+    
+    .login-box span {
+        font-size: 1.5rem;
+    }
+    
+    .login-box button {
+        font-size: 1rem;
+        padding: .5rem 1rem;
+    }
+
+    .login-box p {
+        font-size: .8rem;
+    }
+    
+    /* Sidebar */
+    .sidebar .menu {
+        width: 50%;
+        left: -50%; 
+    }
+
+    /* Main content */
+    /* Analytics */
+    .main-content .analytics-page .first-divison .search-bar {
+        gap: .2rem;
+        padding: 0.2rem;
+        font-size: .6rem;
+    }
+
+    .main-content .analytics-page .second-divison {
+        gap: .5rem;
+    }
+
+    .main-content .analytics-page .second-divison .box {
+        gap: .2rem;
+        padding: .1rem;
+        border-radius: var(--container-border-radius);
+    }
+    
+    .main-content .analytics-page .second-divison .box .circle {
+        width: 2rem;
+        height: 2rem;
+        font-size: .8rem;
+    }
+
+    .main-content .analytics-page .second-divison .box .box-content {
+        width: 5rem;
+        border-left: 2px dotted grey;
+    }
+    
+    .main-content .analytics-page .second-divison .box .box-content p {
+        font-size: .4rem;
+    }
+    
+    .main-content .analytics-page .second-divison .box .box-content h2 {
+        font-size: .8rem;
+    }
+    
+    .third-divison .analytics {
+        padding: .3rem;
+    }
+    
+    .third-divison .analytics .first-division .heading p {
+        font-size: .4rem;
+    }
+    
+    .third-divison .analytics .first-division select {
+        padding: 0.1rem;
+    }
+    
+    .third-divison .analytics .chart {
+        gap: .25rem;
+    }
+    
+    .third-divison .analytics .chart>div {
+        text-align: center;
+    }
+    
+    .third-divison .analytics .chart>div h6 {
+        margin-top: .3rem;
+    }
+    
+    .bar {
+        width: 1.3rem;
+    }
+    
+    .third-divison .customers {
+        padding: .3rem;
+    }
+
+    .third-divison .customers h5 {
+        font-size: .7rem;
+    }
+    
+    .third-divison .customers p {
+        font-size: .5rem;
+    }
+    
+    .third-divison .customers span {
+        font-size: .5rem;
+    }
+
+    .third-divison .customers .outer-circle {
+        width: 6rem;
+        height: 6rem;
+    }
+    
+    .third-divison .customers .outer-circle .inner-circle {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .third-divison .customers .outer-circle .inner-circle .circle-content h3 {
+        font-size: .8rem;
+    }
+    
+    .main-content .analytics-page .fourth-divison {
+        padding: .5rem;
+    }
+    
+    .main-content .analytics-page .fourth-divison .first-row h3 {
+        font-size: .7rem;
+    }
+    
+    .main-content .analytics-page .fourth-divison .first-row>div {
+        gap: .2rem;
+    }
+    
+    .main-content .analytics-page .fourth-divison .first-row>div .search-bar {
+        gap: .2rem;
+        padding: 0.2rem;
+        font-size: .6rem;
+    }
+    
+    .main-content .analytics-page .fourth-divison .first-row>div .search-bar input[type="search"] {
+       width: 5rem;
+    }
+    
+    .main-content .analytics-page .fourth-divison .first-row>div select {
+        padding: .1rem;
+        font-size: .6rem;
+    }
+
+    .main-content .analytics-page .fourth-divison table {
+        margin-top: 2rem;
+    }
+    
+    .main-content .analytics-page .fourth-divison table thead tr th {
+        font-size: 0.6rem;
+    }
+    
+    .main-content .analytics-page .fourth-divison table tbody tr td {
+        padding-top: 1rem;
+    }
+    
+    .main-content .analytics-page .fourth-divison table tbody tr td:nth-child(1) {
+        gap: .5rem;
+    }
+
+    .main-content .analytics-page .fourth-divison table tbody tr td:nth-child(1) .table-data-content h4 {
+        font-size: 0.6rem;
+    }
+    
+    .main-content .analytics-page .fourth-divison table tbody tr td:nth-child(1) .table-data-content p {
+        font-size: 0.4rem;
+    }
+
+    .main-content .analytics-page .fourth-divison table tbody tr td:nth-last-child(-n+3) {
+       font-size: .6rem;
+    }
+
+    /* Admin */
+    .container .main-content .admin-page .first-divison {
+        padding: .3rem;
+    }
+    
+    .container .main-content .admin-page .first-divison .m-p-first-division h3 {
+        font-size: .7rem;
+    }
+    
+    .container .main-content .admin-page .first-divison .m-p-first-division .search-products {
+        gap: .5rem;
+        font-size: .6rem;
+        padding: 0.3rem;
+    }
+    
+    .container .main-content .admin-page .first-divison .m-p-first-division .search-products input[type='search'] {
+        width: 5rem;
+    }
+    
+    .container .main-content .admin-page .first-divison .m-p-first-division select {
+        padding: 0.2rem;
+    }
+    
+    .container .main-content .admin-page .first-divison .m-p-second-divison {
+        margin-top: 2rem;
+    }
+    
+    .container .main-content .admin-page .second-divison {
+        padding: 1rem;
+    }
+    
+    .container .main-content .admin-page .second-divison div {
+        gap: 1rem;
+    }
+    
+    .container .main-content .admin-page .second-divison div button {
+        padding: 0.4rem .5rem;
+        font-size: 1rem;
+    }
+    
+    /* Customers */
+    .container .main-content .customer-page {
+        gap: .5rem;
+    }
+    
+    .container .main-content .customer-page .first-divison {
+        padding: .5rem 0;
+    }
+    
+    .container .main-content .customer-page .first-divison .customer-heading {
+        padding: 0 .5rem;
+    }
+    
+    .container .main-content .customer-page .first-divison .customer-heading h1 {
+        font-size: 1rem;
+    }
+    
+    .container .main-content .customer-page .first-divison .customer-heading i {
+        font-size: 1.2rem;
+    }
+    
+    .customerList {
+        margin-top: 3rem;
+        padding: 0 .5rem;
+    }
+    
+    .customerData h5 {
+        font-size: 0.6rem;
+    }
+    
+    .customerData span {
+        font-size: 0.5rem;
+    }
+    
+    .btn-danger {
+        padding: 0.5rem;
+        font-size: .6rem;
+    }
+
+    .container .main-content .customer-page .second-divison {
+        padding: .5rem;
+    }
+    
+    .container .main-content .customer-page .second-divison h2 {
+        font-size: 1rem;
+    }
+    
+    .container .main-content .customer-page .second-divison button {
+        padding: 0.2rem 1rem;
+        font-size: 1rem;
+    }
+    
+    .container .main-content .customer-page .customer-engagement {
+        padding: .5rem;
+    }
+    
+    .container .main-content .customer-page .customer-engagement .first-divison h3 {
+        font-size: .8rem;
+    }
+    
+    .container .main-content .customer-page .customer-engagement .first-divison select {
+        padding: 0.2rem;
+    }
+    
+    .container .main-content .customer-page .customer-engagement {
+        padding: .5rem;
+    }
+
+    /* Profiles */
+    .container .main-content .profiles-page .profiles-container .profile-card {
+        width: 10rem;
+    }
+    
+    .container .main-content .profiles-page .profiles-container .profile-card img {
+        width: 5rem;
+        height: 5rem;
+    }
+    
+    .container .main-content .profiles-page .profiles-container .profile-card button {
+        padding: .3rem;
+        font-size: .5rem;
+    }
+
+    /* Settings */
+    .container .main-content .settings-page {
+        gap: 3rem;
+    }
+    
+    .container .main-content .settings-page .settings-options-container {
+        padding: 0;
+    }
+    
+    .container .main-content .settings-page .settings-options-container .setting-option {
+        padding: .5rem;
+    }
+    
+    .container .main-content .settings-page .settings-options-container .setting-option .sett-opt-first {
+        gap: 0.5rem;
+    }
+    
+    /* Customer modal */
+    
+    .customer-modal span {
+        right: 10%;
+    }
+    
+    .customer-modal .modalContent {
+        left: 10%;
+    }
+    
+}
